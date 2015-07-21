@@ -1,0 +1,41 @@
+<template name="layoutMain">
+    <header>
+        {{> logo}}
+        {{> yield "nav"}}
+    </header>
+    <aside>
+        {{> yield "aside"}}
+    </aside>
+    <div class="container-fluid">
+        {{> yield}}
+    </div>
+    <div class="container-fluid">
+        {{> yield "footer" }}
+    </div>
+</template>
+
+<head>
+    <title>weshare.love</title>
+</head>
+
+<template name="home">
+    <h3>weshare.love</h3>
+    [Search]
+</template>
+
+<template name="logo">
+    [Logo]
+</template>
+
+<template name="nav">
+    [Nav]
+</template>
+
+<template name="footer">
+    [Footer]
+</template>
+
+
+<template name="aside">
+    [Aside]
+</template>
