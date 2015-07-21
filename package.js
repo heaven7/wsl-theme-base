@@ -14,8 +14,7 @@ Package.onUse(function(api) {
 
     api.use(
         [
-            'templating',
-            'iron:router'
+            'heaven7:wsl-core'
         ],
         both);
 
