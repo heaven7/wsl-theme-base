@@ -14,14 +14,20 @@ Package.onUse(function(api) {
 
     api.use(
         [
-            'heaven7:wsl-core'
+            'templating',
+            'iron:router'
         ],
         both);
 
     api.addFiles(
         [
-            'lib/client/layouts/main/main.html',
-            'lib/router/routes.js'
+            'lib/client/layouts/main/main.html'
         ],
         'client');
+    api.addFiles(
+        [
+            'lib/both/config.js',
+            'lib/both/routes.js'
+        ],
+        both);
 });
