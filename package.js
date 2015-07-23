@@ -10,7 +10,6 @@ both = ['client','server'];
 
 Package.onUse(function(api) {
     api.versionsFrom('1.1.0.2');
-    api.addFiles('wsl-theme-base.js');
 
     api.use(
         [
@@ -26,7 +25,8 @@ Package.onUse(function(api) {
     api.addFiles(
         [
             'lib/both/config.js',
-            'lib/both/routes.js'
+            'lib/both/routes.js',
+            'lib/both/theme-base.js'
         ],
         both);
 });
