@@ -11,11 +11,17 @@ both = ['client','server'];
 Package.onUse(function(api) {
     api.versionsFrom('1.1.0.2');
 
+    api.addFiles([
+        'package-tap.i18n'
+    ], both);
+
     api.use(
         [
-            'heaven7:wsl-core'
-        ],
-        both);
+            'heaven7:wsl-core',
+            'heaven7:wsl-i18n'
+        ], both);
+
+    api.imply('heaven7:wsl-i18n');
 
     api.addFiles(
         [
@@ -23,11 +29,20 @@ Package.onUse(function(api) {
             'lib/client/templates/dashboard.html'
         ],
         'client');
+
     api.addFiles(
         [
             'lib/both/config.js',
             'lib/both/routes.js',
             'lib/both/theme-base.js'
+        ],
+        both);
+
+    api.addFiles(
+        [
+            'i18n/de.i18n.json',
+            'i18n/en.i18n.json',
+            'i18n/es.i18n.json'
         ],
         both);
 });
