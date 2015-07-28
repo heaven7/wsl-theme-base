@@ -4,7 +4,7 @@
         {{> yield "nav"}}
     </header>
     <aside>
-        {{> i18n_dropdown}}
+        {{> languageSwitcher}}
         {{> yield "aside"}}
     </aside>
     <div class="container-fluid">
@@ -48,4 +48,14 @@
 
 <template name="notFound">
     [notFound]
+</template>
+
+<template name="languageSwitcher">
+    {{#if i18n_enabled}}
+        <select id="language_switcher" name="languageSwitcher">
+        {{#each i18n_sortedLanguages}}
+            <option value="{{this.tag}}">{{this.name}}</option>
+        {{/each}}
+        </select>
+    {{/if}}
 </template>

@@ -20,6 +20,7 @@ Package.onUse(function(api) {
 
     api.addFiles([
         'lib/client/layouts/main.html',
+        'lib/client/layouts/main.js',
         'lib/client/templates/dashboard.html'
     ], 'client');
 
