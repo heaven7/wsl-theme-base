@@ -12,8 +12,8 @@ Package.onUse(function(api) {
     api.versionsFrom('1.1.0.2');
 
     api.use([
-        'heaven7:wsl-core',
-        'heaven7:wsl-i18n'
+        'heaven7:wsl-core@0.0.1',
+        'heaven7:wsl-i18n@0.0.1'
     ], both);
 
     api.imply('heaven7:wsl-i18n');
