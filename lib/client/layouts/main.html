@@ -45,7 +45,8 @@
 <template name="aside">
     [Aside]
     {{#if loggedIn }}
-        <a href="{{pathFor "dashboard"}}">{{_ "dashboard"}}</a>
+        <a href="{{pathFor "dashboard"}}">{{_ "dashboard"}}</a> ||
+        <a href="{{pathFor "logout"}}">{{_ "logout"}}</a>
     {{/if}}
 </template>
 

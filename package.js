@@ -22,7 +22,7 @@ Package.onUse(function(api) {
         'lib/client/layouts/main.html',
         'lib/client/layouts/main.js',
         'lib/client/templates/dashboard.html',
-        'lib/client/templates/items.html',,
+        'lib/client/templates/items.html',
         'lib/client/templates/projects.html'
     ], 'client');
 
