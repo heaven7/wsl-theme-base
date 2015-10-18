@@ -35,7 +35,17 @@
         <li><a href="#">Teach & learn</a></li>
         <li><a href="#">Play & Celebrate</a></li>
     </ul>
-    {{> atForm}}
+    {{#if loggedIn }}
+        <ul id="profile">
+            <li><a href="{{pathFor "dashboard"}}">{{_ "dashboard"}}</a></li>
+            <li><a href="{{pathFor "items"}}">{{_ "items"}}</a></li>
+            <li><a href="{{pathFor "projects"}}">{{_ "projects"}}</a></li>
+            <li><hr/></li>
+            <li><a href="{{pathFor "logout"}}">{{_ "logout"}}</a></li>
+        </ul>
+    {{else}}
+        {{> login}}
+    {{/if}}
 </template>
 
 <template name="footer">
@@ -44,10 +54,14 @@
 
 <template name="aside">
     [Aside]
-    {{#if loggedIn }}
-        <a href="{{pathFor "dashboard"}}">{{_ "dashboard"}}</a> ||
-        <a href="{{pathFor "logout"}}">{{_ "logout"}}</a>
-    {{/if}}
+</template>
+
+<template name="login">
+    {{> atForm}}
+</template>
+
+<template name="notAuthenticated">
+    [notAuthenicated]
 </template>
 
 <template name="notFound">

@@ -11,12 +11,16 @@ both = ['client','server'];
 Package.onUse(function(api) {
     api.versionsFrom('1.1.0.2');
 
-    api.use([
+    var packages = [
         'heaven7:wsl-core@0.0.1',
-        'heaven7:wsl-i18n@0.0.1'
-    ], both);
+        'heaven7:wsl-i18n@0.0.1',
+        'zimme:iron-router-auth',
+        'iron:router'
+    ];
 
-    api.imply('heaven7:wsl-i18n');
+    api.use(packages, both);
+
+    api.imply(packages);
 
     api.addFiles([
         'lib/client/layouts/main.html',
