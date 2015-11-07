@@ -14,8 +14,8 @@ Package.onUse(function(api) {
     var packages = [
         'heaven7:wsl-core@0.0.2',
         'heaven7:wsl-i18n@0.0.2',
-        'zimme:iron-router-auth',
-        'iron:router'
+        'zimme:iron-router-auth@3.2.0-rc.4',
+        'iron:router@1.0.12'
     ];
 
     api.use(packages, both);
