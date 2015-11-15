@@ -41,7 +41,8 @@
             </div>
         </a>
     {{else}}
-        <a href class="item right">Login / Register</a>
+        <a href="{{pathFor "login"}}" class="item right">Login</a>
+        <a href="{{pathFor "signup"}}" class="item right">Register</a>
     {{/if}}
 </template>
 
@@ -50,10 +51,6 @@
 </template>
 
 <template name="aside">
-</template>
-
-<template name="login">
-    {{> atForm}}
 </template>
 
 <template name="notAuthenticated">
