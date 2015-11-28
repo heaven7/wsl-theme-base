@@ -1,4 +1,5 @@
 <template name="layoutMain">
+    {{> wAlert}}
     <div id="mainmenu">
         {{> logo}}
         {{> yield "nav"}}
@@ -52,16 +53,16 @@
 <template name="aside">
 </template>
 
-<template name="notAuthenticated">
-    [notAuthenicated]
-</template>
-
 <template name="notFound">
     [notFound]
 </template>
 
 <template name="loading">
     [loading]
+</template>
+
+<template name="wAlert">
+    {{> sAlert}}
 </template>
 
 <template name="languageSwitcher">
