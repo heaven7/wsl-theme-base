@@ -31,8 +31,6 @@ Package.onUse(function(api) {
 
     ], 'client');
 
-    api.addAssets(['lib/client/layouts/main.less'], 'client');
-
     api.addFiles([
         'lib/both/config.js',
         'lib/both/routes.js',

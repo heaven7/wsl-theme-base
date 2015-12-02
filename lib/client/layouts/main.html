@@ -32,6 +32,7 @@
         <a href="#">Play & Celebrate</a>
     {{#if loggedIn }}
         <div>
+            <div>{{currentUser.username}}</div>
             <div><a href="{{pathFor "dashboard"}}">{{_ "dashboard"}}</a></div>
             <div><a href="{{pathFor "items"}}">{{_ "items"}}</a></div>
             <div><a href="{{pathFor "projects"}}">{{_ "projects"}}</a></div>
