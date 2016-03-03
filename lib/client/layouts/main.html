@@ -1,14 +1,18 @@
 <template name="layoutMain">
     {{> wAlert}}
-    <div id="mainmenu">
+    <div class="ui borderless main menu" id="mainmenu">
         {{> logo}}
         {{> yield "nav"}}
     </div>
-    <div>
+    <div class="ui container">
         {{> yield "aside"}}
         {{> yield}}
         {{> yield "footer" }}
     </div>
+</template>
+
+<template name="logo">
+    <div class="item"><a href="{{pathFor "home"}}" class="ui item">[Logo]</a></div>
 </template>
 
 <head>
@@ -21,30 +25,33 @@
     {{> fulfiller}}
 </template>
 
-<template name="logo">
-    <div>[Logo]</div>
-</template>
-
 <template name="nav">
-        <a href="#">Share & Care</a>
-        <a href="#">Wishes & Dreams</a>
-        <a href="#">Teach & learn</a>
-        <a href="#">Play & Celebrate</a>
-    {{#if loggedIn }}
-        <div>
-            <div>{{currentUser.username}}</div>
-            <div><a href="{{pathFor "dashboard"}}">{{_ "dashboard"}}</a></div>
-            <div><a href="{{pathFor "items"}}">{{_ "items"}}</a></div>
-            <div><a href="{{pathFor "projects"}}">{{_ "projects"}}</a></div>
-            <hr>
-            <div><a href="{{pathFor "logout"}}">{{_ "logout"}}</a></div>
-        </div>
-    {{else}}
-        <a href="{{pathFor "login"}}">Login</a>
-        <a href="{{pathFor "signup"}}">Register</a>
-    {{/if}}
+    <a class="item" href="#">Share & Care</a>
+    <a class="item" href="#">Wishes & Dreams</a>
+    <a class="item" href="#">Teach & learn</a>
+    <a class="item" href="#">Play & Celebrate</a>
+    <div class="right menu">
+        {{#if loggedIn }}
+            {{> profilemenu}}
+        {{else}}
+            <a href="{{pathFor "login"}}" class="ui item">Login</a>
+            <a href="{{pathFor "signup"}}" class="ui item">Register</a>
+        {{/if}}
+    </div>
 </template>
 
+<template name="profilemenu">
+    <a href="#" class="ui right dropdown item" id="profile">
+        {{> avatar_small user=currentUser}}
+        <div class="menu" tabindex="0">
+            <div class="item"><a href="{{pathFor "dashboard"}}">{{_ "dashboard"}}</a></div>
+            <div class="item"><a href="{{pathFor "items"}}">{{_ "items"}}</a></div>
+            <div class="item"><a href="{{pathFor "projects"}}">{{_ "projects" count=2}}</a></div>
+            <div class="divider"></div>
+            <div class="item"><a href="{{pathFor "logout"}}">{{_ "logout"}}</a></div>
+        </div>
+    </a>
+</template>
 <template name="footer">
     <div id="footer" style="display: block; clear: both;">
         {{> languageSwitcher}}
