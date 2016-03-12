@@ -22,7 +22,7 @@
 
 <template name="home">
     <h3>weshare.love</h3>
-    {{> fulfiller}}
+    {{> itemsList}}
 </template>
 
 <template name="nav">
@@ -53,8 +53,8 @@
     </a>
 </template>
 <template name="footer">
-    <div id="footer" style="display: block; clear: both;">
-        {{> languageSwitcher}}
+    <div id="footer">
+        {{> language_switcher class="ui dropdown"}}
     </div>
 </template>
 
@@ -71,14 +71,4 @@
 
 <template name="wAlert">
     {{> sAlert}}
-</template>
-
-<template name="languageSwitcher">
-    {{#if i18n_enabled}}
-        <select id="language_switcher" name="languageSwitcher">
-        {{#each i18n_sortedLanguages}}
-            <option value="{{this.tag}}">{{this.name}}</option>
-        {{/each}}
-        </select>
-    {{/if}}
 </template>
