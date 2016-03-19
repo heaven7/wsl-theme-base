@@ -21,8 +21,11 @@
 </head>
 
 <template name="home">
-    <h3>weshare.love</h3>
-    {{> itemsList}}
+    {{#if loggedIn}}
+        {{> itemsList}}
+    {{else}}
+        {{> login}}
+    {{/if}}
 </template>
 
 <template name="nav">
